@@ -1,0 +1,207 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+{% include 'messages.html' %}
+<div id="carouselExampleCaptions" data-bs-ride="carousel" class="carousel slide" style="background-image: url('{% static "image/home.jpg" %}');">
+    <div class="carousel-indicators">
+      {% for hero in heroSection %}
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="{{ forloop.counter0 }}" {% if forloop.first %}class="active"{% endif %} aria-label="Slide {{ forloop.counter }}"></button>
+      {% endfor %}
+    </div>
+
+    <div class="carousel-inner">
+      {% for hero in heroSection %}
+        <div class="carousel-item {% if forloop.first %}active{% endif %}">
+          <div class="carousel-caption">
+            <h5 class="animated fadeInDown text-orange" style="animation-delay: 0.5s;">{{ hero.title }}</h5>
+            <p class="animated fadeInUp  text-hero" style="animation-delay: 1s;">{{ hero.description }}</p>
+            <p class="animated fadeInUp" style="animation-delay: 1.5s;"><a class="text-white bg-blue" href="#">Learn more</a></p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+            <!-- Short About Section -->
+  <div class="about-area section-padding" id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-sm-12">
+          <div class="img-area">
+            <img src="{% static 'image/Hero.jpeg' %}" alt="">
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-sm-12">
+          <div class="about-text">
+            <h2 class="text-blue">We are <span class="text-orange"> Trusted </span> Repair Center</h2>
+            <p class="text-blac">
+              At our auto repair center, we are dedicated to providing exceptional service and reliable solutions for 
+              all your automotive needs. With a passion for cars and a commitment to excellence, our team of skilled
+              technicians is here to ensure your vehicle receives the utmost care and attention it deserves.
+            </p>
+            <a href="{% url 'about' %}" class="btn bg-dac text-whit">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+          <!-- Services -->
+    {% if featured_services %}
+      <div class="services section-padding h-100" id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-header text-center">
+                        <h2 class="text-blue"> Our <span class="text-orange"> Service </span></h2>
+                        <p> we Do quick repairs </p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="row d-flex flex-wrap">
+                {% for service in featured_services %}
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="single-services bg-dac text-center text-whit d-flex flex-column align-items-stretch h-100">
+                            <i class="{{ service.icon }}"></i>
+                            <h2> {{ service.name }}</h2>
+                            <p class="truncated-description">{{ service.description|truncatewords:17 }}</p>
+                            <a href="{% url 'services' %}" class="btn bg-whit txt-black mt-auto">View More</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+      </div>
+    {% endif %}
+
+
+    <!-- Why US-->
+    <div class="choose section-padding" id="choose">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="section-header text-center">
+              <h2 class="text-blue"> Why <span class="text-orange"> Choose Us </span></h2>
+              <p> we Do quick repairs </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-7">
+            <div class="choose-area text-center">
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                  <div class="single-box">
+                    <i class="fa fa-automobile text-orange"></i>
+                    <h2 class="text-blue"> Expert Technicians </h2>
+                    <p class="text-blue"> 
+                      Our skilled technicians bring years of experience and expertise, ensuring your vehicle receives top-notch care and precise repairs
+                      Discover peace of mind with our team of dedicated professionals who go above and beyond to keep your vehicle running smoothly
+                    </p>
+                  </div>
+                </div>
+                
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                  <div class="single-box">
+                    <i class="fa fa-automobile text-orange"></i>
+                    <h2 class="text-blue"> Transparent Service </h2>
+                    <p class="text-blue"> 
+                      We believe in transparent communication and fair pricing. You can trust us to provide honest assessments
+                      and clear explanations, ensuring you are informed every step of the way.
+                    </p>
+                  </div>
+                </div>
+                
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                  <div class="single-box">
+                    <i class="fa fa-automobile text-orange"></i>
+                    <h2 class="text-blue"> Customer-Centric Approach </h2>
+                    <p class="text-blue"> 
+                      Our commitment to customer satisfaction is at the core of everything we do. From personalized service to a friendly and accommodating team, we prioritize your needs and strive to exceed your expectations.
+                      Choose a repair center that puts you first, providing a customer-centric experience that goes beyond the ordinary.
+                    </p>
+                  </div>
+                </div>        
+
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                  <div class="single-box">
+                    <i class="fa fa-automobile text-orange"></i>
+                    <h2 class="text-blue"> Cutting-Edge Facilities</h2>
+                    <p class="text-blue"> 
+                      Equipped with state-of-the-art facilities, our repair center utilizes the latest diagnostic tools and technology. This enables us to diagnose issues accurately and efficiently,
+                      leading to prompt and effective solutions.Rely on our cutting-edge facilities to deliver precision in diagnostics and repairs, ensuring your vehicle gets back on the road swiftly
+                    </p>
+                  </div>
+                </div>        
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5 col-sm-12">
+          <div class="choose-img">
+            <img src="{% static 'image/choose.jpg' %}" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <!--- Contact -->
+    <div class="contact section-padding" id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="section-header text-center">
+              <h2 class="text-blue"> Contact <span class="text-orange"> Us </span></h2>
+              <p> Get To US </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-5 col-sm-12">
+            <div class="left-contact bg-dac text-whit">
+              <h3><i class="fa-solid fa-location-crosshairs"></i> Location:</h3>
+              <p>{{ contact.location }}</p>
+              <h3><i class="fa-regular fa-envelope"></i> Email:</h3>
+              <p>{{ contact.email }}</p>
+              <h3><i class="fa-solid fa-phone"></i> Call Us:</h3>
+              <p>{{ contact.phone_number }}</p>
+
+            </div>
+          </div>
+          <div class="col-lg-6 offset-lg-1 col-sm-12">
+            <form action="{% url 'contactMessage' %}" method="POST">
+              {% csrf_token %}
+              <label for="name">Your Name</label>
+              <input type="text" class="form-control" id="name" name="name" placeholder="Enter Your Name" required>
+          
+              <label for="email">Email</label>
+              <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email" required>
+          
+              <label for="message">Message</label>
+              <textarea class="form-control" id="message" name="message" placeholder="Enter Your Message" required></textarea>
+          
+              <button type="submit" class="btn bg-dac text-whit">Submit</button>
+          </form>
+          
+          </div>
+        </div>
+      </div>
+    </div>
+
+{% endblock %}

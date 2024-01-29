@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}about{% endblock %}
+
+{% block body %}
+            <!-- Short About Section -->
+  <h1 class="text-center text-blue about-header" style="margin-top: 100px;">About <span class="text-orange"> us</span></h1>
+  <div class="about-area section-padding" id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-sm-12">
+          <div class="about-img-area">
+            <img src="{% static 'image/Hero.jpeg' %}" alt="">
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-sm-12">
+          <div class="about-text">
+            <h1 class="text-blue"">Get To Know <span class="text-orange"> us</span></h1>
+            <p class="text-blac">
+              {{ about }}
+            </p>
+            <a href="{% url 'contact' %}" class="btn bg-dac text-whit">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  
+
+{% endblock %}

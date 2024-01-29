@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Services{% endblock %}
+
+{% block body %}
+<div class="services section-padding" id="services">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-header text-center">
+                    <h2 class="text-blue"> Our <span class="text-orange"> Service </span></h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            {% for service in services %}
+                <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
+                    <div class="single-services bg-dac text-whit text-center">
+                        <i class="{{ service.icon }}"></i>
+                        <h2>{{ service.name }}</h2>
+                        <p class="truncated-description">{{ service.description|truncatewords:20 }}</p>
+                        <p class="full-description collapse" id="collapse{{ forloop.counter }}">
+                            {{ service.description }}
+                        </p>
+                        <a href="#" class="btn bg-whit txt-black learn-more" data-toggle="collapse" data-target="#collapse{{ forloop.counter }}" aria-expanded="false" aria-controls="collapse{{ forloop.counter }}">
+                            Read More
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+<script>
+    // JavaScript to handle toggling between truncated and full descriptions
+    $(document).ready(function () {
+        $(".learn-more").on("click", function () {
+            const $button = $(this);
+            const $truncated = $button.closest(".single-services").find(".truncated-description");
+            const $full = $button.closest(".single-services").find(".full-description");
+
+            $truncated.toggle();
+            $full.toggle();
+
+            const isOpen = $full.is(":visible");
+            $button.text(isOpen ? "Close" : "Learn More");
+        });
+    });
+</script>
+
+{% endblock %}

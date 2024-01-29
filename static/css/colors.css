@@ -1,0 +1,93 @@
+/* custom.css */
+
+/* ... (other styles) ... */
+
+
+body.light-mode {
+    --navbar-bg-color: #f8f9fa;
+    --navbar-text-color: #212529;
+    --body-bg-color: #ffffff;
+    --text-orange: #A15F1A;
+    --bg-orange: #A15F1A;
+    --text-blue: #08194a;
+    --text-hero: #08194a;
+    --bg-white: white;
+    --text-whit: white;
+    --text-blac: black;
+    --bg-footer: #262626;
+    --bg-dac: #262626;
+    --bg-whit: white;
+    --txt-black: black;
+}
+
+body.dark-mode {
+    --navbar-bg-color: #343a40;
+    --navbar-text-color: #ffffff;
+    --body-bg-color: #212529;
+    --text-orange: #A15F1A;
+    --bg-orange: #A15F1A;
+    --text-blue: #fff;
+    --bg-white: #000; /* Set background color to black */
+    --text-whit: black;
+    --text-blac: #fff;
+    --bg-footer: #000000;
+    --bg-dac: white;
+    --bg-whit: #000; /* Set background color to black */
+    --txt-black: white;
+    --text-hero: #08194a;
+}
+
+/* Common Styles */
+.navbar {
+    background-color: var(--navbar-bg-color);
+    color: var(--navbar-text-color);
+}
+
+body {
+    background-color: var(--body-bg-color);
+}
+
+.text-orange {
+    color: var(--text-orange);
+}
+
+.text-blac {
+    color: var(--text-blac);
+}
+
+.text-blue {
+    color: var(--text-blue);
+}
+
+.text-hero {
+    color: var(--text-hero);
+}
+
+.text-whit {
+    color: var(--text-whit);
+}
+
+.txt-black {
+    color: var(--txt-black);
+}
+
+.bg-orange {
+    background-color: var(--bg-orange);
+}
+
+.bg-white {
+    background-color: var(--bg-white);
+}
+
+
+.bg-footer {
+    background-color: var(--bg-footer);
+}
+
+.bg-dac {
+    background-color: var(--bg-dac);
+}
+
+.bg-whit {
+    background-color: var(--bg-whit);
+}

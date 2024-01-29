@@ -1,0 +1,293 @@
+*{
+    font-family: montserrat;
+}
+
+.theme-toggle {
+    width: 100px; 
+    height: 20px;
+  }
+  
+.section-header {
+    margin-bottom: 40px;
+}
+
+.section-header h2 {
+    font-size: 45px;
+    font-weight: 700px;
+}
+
+.navbar-nav a{
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.navbar-light .navbar-brand {
+    color: #08194a;
+    font-size: 25;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.navbar-light .navbar-brand span {
+    color: #e53f29;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.w-100{
+    height: 100vh;
+}
+
+.navbar-toggler {
+    padding: 1px 5px;
+    font-size: 18px;
+    line-height: 0.3;
+    background: #fff;
+}
+
+.carousel{
+    background-size: cover;
+    position: center;
+    height: 80vh;
+}
+
+.carousel-item {
+    height: 100vh;
+    min-height: 300px;
+}
+
+.carousel-caption{
+    bottom:220px;
+    z-index: 2;
+    left: 8%;
+}
+
+.carousel-caption h5{
+    font-size: 45px;
+    margin-top: 25px;
+    font-weight: 700;
+    text-align: left;
+}
+
+.carousel-caption p{
+    width: 60%;
+    font-size: 18px;
+    line-height: 1.8;
+    text-align: left;
+}
+
+.carousel-caption a{
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 5px 20px;
+    display: inline-block;
+    margin-top: 15px;
+    border-radius: 5px;
+    text-align: left;
+}
+
+
+/* Home about */
+.img-area img{
+    width: 100% !important;
+    height: 300px;
+}
+
+.about-text h2{
+    font-size: 45px;
+    font-weight: 700;
+}
+
+.about-header {
+    font-size: 45px;
+    font-weight: 700;
+}
+
+/* about page image */
+.about-img-area img{
+    width: 100% !important;
+    height: 100%;
+}
+
+/* home page services */
+
+.single-services {
+    padding: 30px 15px;
+}
+
+.single-services i {
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+
+
+/** Why choose Us **/
+.choose-img img{
+    width: 100%;
+    height: 100%;
+}
+
+.single-box {
+    padding: 20px;
+    height: 300px;
+}
+
+.single-box i {
+    font-size: 35px;
+    margin-bottom: 25px;
+}
+
+.single-box i {
+    font-size: bebas neue;
+    font-weight: bold;
+}
+
+
+/** Contact Us **/
+.left-contact {
+    padding: 60px;
+}
+
+.left-contact h3 {
+    margin-bottom: 10px;
+}
+
+label {
+    font-size: 28px;
+    margin: 10px 0;
+}
+
+.contact .btn {
+    display: inline-block;
+    margin-top: 30px;
+}
+
+/* Add this to your existing CSS */
+
+
+
+/*** blog **************/
+
+.section-headrer {
+    text-align: center;
+    margin-top: 18px;
+    margin-bottom: 30px;
+}
+
+.section-header p{
+    font-size: 15px;
+}
+
+.single-blog {
+    border: 1px solid #08194a;
+    text-align: center;
+    background: #ebebeb;
+    margin-bottom: 50px;
+}
+
+.blog-bg {
+    height: 200px;
+    position: relative;
+}
+
+.blog-bg-1 {
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center;
+}
+
+.blog-bg h2 {
+    color: #fff;
+    border: 1px solid #A15F1A;
+    font-size: 17px;
+    align-items: center;
+    font-weight: 700;
+    padding: 15px;
+    position: absolute;
+    left: 8%;
+    width: 84%;
+    margin: 0;
+    bottom: -25px;
+    border-radius: 50px;
+    letter-spacing: 2px;
+}
+
+.blog-text {
+    padding: 50px 30px 20px;
+    font-size: 15px;
+    font-weight: 400px;
+}
+
+.btn-area {
+    display: inline-block;
+    font-style: 17px;
+    font-weight: 700;
+    margin-top: 30px;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+
+.btn:hover{
+    background: #262626;
+    color: white;
+}
+
+.blog-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+/* Custom CSS for footer links */
+.footer-section a {
+    color: white !important;
+    transition: color 0.3s ease;
+    font-size: 20px;
+    text-decoration: none;
+}
+  
+  /* Hover effect for footer links */
+ .footer-section a:hover {
+    color: #e53f29 !important;
+  }
+
+  /* Custom CSS for increasing font size of "Auto Repair" and its text */
+.footer-section h3.text-white {
+    font-size: 25px; /* Adjust the font size as needed */
+  }
+  
+  .footer-section p.text-white {
+    font-size: 20px; /* Adjust the font size as needed */
+  }
+  
+  
+
+/* CSS */
+/* CSS for screens up to 576px */
+@media (max-width: 576px) {
+    .carousel-caption p {
+        width: 100%; 
+        font-size: 1rem; 
+        line-height: 1.5;
+        text-align: left;
+        margin: 0;
+    }
+    .carousel-item {
+        height: 90vh;
+        min-height: 300px;
+    }
+}
+
+/* CSS for screens between 577px and 767px */
+@media(min-width: 799px) and (max-width: 800px){
+    .carousel-caption p {
+        /* Your styles for this screen size */
+    }
+    .carousel-item {
+        height: 80vh;
+        min-height: 300px;
+    }
+}
+
